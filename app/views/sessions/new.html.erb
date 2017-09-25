@@ -1,0 +1,10 @@
+<h1>Sessions#new</h1>
+<%= form_tag sessions_path do %>
+    <h1>Sign In</h1>
+    <%= label_tag :email, 'Email' %>
+    <%= text_field_tag :email, params[:email] %>
+    <%= label_tag :password, 'Password' %>
+    <%= password_field_tag :password, nil %>
+    <%= submit_tag 'Log in' %>
+    <%= link_to "Don't have an account?", new_user_path %>
+<% end %>

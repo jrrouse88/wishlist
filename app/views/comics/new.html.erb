@@ -1,0 +1,11 @@
+<h1>Comics#new</h1>
+
+<%= form_for @comic do |f| %>
+    <%= f.label :title, "Title: " %>
+    <%= f.text_field :title %> <br />
+    <%= f.label :issue_number, "Issue Number: " %>
+    <%= f.number_field :issue_number %> <br />
+    <%= f.label :price, "Price: " %>
+    <%= f.text_field :price %> <br />
+
+<% end %>
