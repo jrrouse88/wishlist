@@ -1,14 +1,23 @@
-<h1>Create an Account</h1>
 
 <%= form_for @user do |f| %>
-    <%= f.label :name, 'Name:' %>
-    <%= f.text_field :name %> <br />
-    <%= f.label :email, 'Email:' %>
-    <%= f.text_field :email %> <br />
-    <%= f.label :password, 'Password:' %>
-    <%= f.password_field :password %> <br />
-    <%= f.label :password_confirmation, 'Password Confirmation:' %>
-    <%= f.password_field :password_confirmation %> <br />
-
-    <%= f.submit 'Sign Up' %>
+    <div class='col-lg-6 center'>
+        <h1>Create an Account</h1>
+        <div class='form-group'>
+            <%= f.label :name, 'Name:', class: 'form-control-label' %>
+            <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class='form-group'>
+            <%= f.label :email, 'Email:', class: 'form-control-label' %>
+            <%= f.text_field :email, class: 'form-control' %>
+        </div>
+        <div class='form-group'>
+            <%= f.label :password, 'Password:', class: 'form-control-label' %>
+            <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class='form-group'>
+            <%= f.label :password_confirmation, 'Password Confirmation:', class: 'form-control-label' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <%= f.submit 'Sign Up', class: 'btn btn-primary' %>
+    </div>
 <% end %>

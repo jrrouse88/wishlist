@@ -1,1 +1,27 @@
 @import "bootstrap";
+
+/***************
+Index Page Styles
+***************/
+.body-index {
+    background-image: url(image-path('comics.jpg'));
+    background-size: cover;
+  }
+
+.jumbotron {
+    h1, p {
+        text-align: center;
+    }
+
+    background: rgba(224, 224, 224, 0.5);
+
+    margin-top: 10%;
+}
+
+/***************
+Form Styles
+***************/
+
+.center {
+    margin: 0 auto;
+}
