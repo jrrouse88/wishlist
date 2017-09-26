@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    @comics = Comic.all
   end
 
   def new
