@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
+  before_action :authorize, only:[:edit, :update, :destroy]
+  
+
   def index
   end
 
   def show
+    
   end
 
   def new
@@ -12,8 +16,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to users_path
     else
+      flash[:danger] = "Please double check all fields"
       redirect_to new_user_path
     end
   end
@@ -25,6 +31,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    current_user.destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   private
