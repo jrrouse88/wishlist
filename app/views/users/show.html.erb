@@ -1,10 +1,22 @@
-<h1>Hello, <%= current_user.name %></h1>
+<% if logged_in? %>
+    <h1>Hello, <%= current_user.name %></h1>
+<% else %>
+    <h1><%= @user.name %>'s Library</h1>
+<% end %>
 
 <div>
-    <h2>My Wishlist:</h2>
-    <% @comics.each do |c| %>
-        <a><%= c.title %></a>
-    <% end %>
-    <br />
-    <%= link_to 'Add Comic', new_comic_path, class:'btn btn-secondary' %>
+    <div>
+        <h2>My Wishlist:</h2>
+        <% @comics.each do |c| %>
+            <div class="card w-25 text-center">
+                <%= image_tag c.image_url, class: 'card-img-top' %>
+                <div class="card-img-overlay">
+                <h4 class="card-title"><%= c.title %> #<%=c.issue_number %></h4>
+                <%= link_to 'Details', comic_path, class: "btn btn-primary" %>
+                </div>
+            </div>
+        <% end %>
+        <br />
+        <%= link_to 'Add Comic', new_comic_path, class:'btn btn-secondary' %>
+    </div>
 </div>
