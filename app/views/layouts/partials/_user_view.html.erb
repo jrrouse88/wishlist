@@ -1,0 +1,13 @@
+<h1>Hello, <%= current_user.name %></h1>
+<h2>My Library:</h2>
+<% @comics.each do |c| %>
+    <div class="card w-25 text-center d-inline-block">
+        <%= image_tag c.image_url, class: 'card-img-top' %>
+        <div class="card-img-overlay">
+        <h4 class="card-title"><%= c.title %> #<%=c.issue_number %></h4>
+        <%= link_to 'Details', comic_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+<% end %>
+<br />
+<%= link_to 'Add Comic', new_comic_path, class:'btn btn-secondary' %>

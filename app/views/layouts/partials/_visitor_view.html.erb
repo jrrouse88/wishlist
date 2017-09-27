@@ -1,0 +1,10 @@
+<h1><%= @user.name %>'s Library:</h1>
+<% @comics.each do |c| %>
+<div class="card w-25 text-center d-inline-block">
+    <%= image_tag c.image_url, class: 'card-img-top' %>
+    <div class="card-img-overlay">
+    <h4 class="card-title"><%= c.title %> #<%=c.issue_number %></h4>
+    <%= link_to 'Details', comic_path, class: "btn btn-primary" %>
+    </div>
+</div>
+<% end %>
