@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'users#index'
   resources :users
+  delete 'delete_account' => "users#destroy", as: :destroy
 
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy', as: :logout

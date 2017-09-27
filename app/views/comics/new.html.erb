@@ -13,6 +13,10 @@
         <%= f.label :price, "Price: ", class: 'form-control-label' %>
         <%= f.text_field :price, class: 'form-control' %>
         </div>
+        <div class='form-group'>
+            <%= f.label :image_url, 'Image URL', class: 'form-control-label' %>
+            <%= f.text_field :image_url, class: 'form-control' %>
+        </div>
         <%= f.submit 'Save Comic', class: 'btn btn-secondary' %>
     </div>
 <% end %>

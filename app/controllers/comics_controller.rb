@@ -15,7 +15,7 @@ class ComicsController < ApplicationController
   def create
     @comic = current_user.comics.new(comic_params)
     if @comic.save
-      redirect_to user_path
+      redirect_to user_path(current_user)
     else
       redirect_to new_comic_path
     end
@@ -32,6 +32,6 @@ class ComicsController < ApplicationController
 
   private
   def comic_params
-    params.required(:comic).permit(:title, :issue_number, :price)
+    params.required(:comic).permit(:title, :issue_number, :price, :image_url)
   end
 end

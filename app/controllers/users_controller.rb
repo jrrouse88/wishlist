@@ -26,9 +26,16 @@ class UsersController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
+    if current_user.update_attributes(user_params)
+      redirect_to user_path
+    else
+      flash[:danger] = 'Please double check all fields'
+      redirect_to edit_user_path
+    end
   end
 
   def destroy

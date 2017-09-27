@@ -15,7 +15,7 @@
                   <a class="dropdown-item" href="#"><%= link_to 'My Page', user_path(current_user) %></a>                    
                   <a class="dropdown-item" href="#"><%= link_to 'Edit Account', edit_user_path(current_user) %></a>                    
                   <a class="dropdown-item" href="#"><%= link_to 'Logout', logout_path, method: 'delete' %></a>
-                  <a class="dropdown-item" href="#"><%= link_to 'Delete Account', 'users#destroy', method: 'delete' %></a>
+                  <a class="dropdown-item" href="#"><%= link_to 'Delete Account', destroy_path(current_user), method: 'delete' %></a>
                 </div>
               </div>
             <% else %>
