@@ -1,8 +1,27 @@
 <div class='row'>
-    <div>
-        <%=  image_tag  @comic.image_url %>
+    <div class='col-lg-4 mr-lg-3'>
+        <%=  image_tag  @comic.image_url, class: 'holder' %>
     </div>
-    <div>
-
+    <div class='col-lg-7'>
+        <div class="card text-center">
+            <div class="card-header">
+              <h1><%= @comic.title %> #<%= @comic.issue_number %></h1>
+            </div>
+                <ul class='list-group list-group flush'>
+                    <li class='list-group-item'>Price: $<%= @comic.price %></li>
+                    <li class='list-group-item'>
+                        <% if @comic.purchased  %>
+                            <p>Purchased: Yes</p>
+                        <% else %>
+                            <p>Purchased: No</p>
+                        <% end %>
+                    </li>
+                </ul>
+            <div class="card-footer text-muted">
+              Added <%= time_ago_in_words @comic.created_at %> ago
+            </div>
+          </div>
+          <%= link_to 'Back', user_path(current_user), class: 'btn btn-secondary' %>
+          <%= link_to 'Edit Comic', edit_comic_path(params[:comicid]), class: 'btn btn-secondary' %>
     </div>
 </div>

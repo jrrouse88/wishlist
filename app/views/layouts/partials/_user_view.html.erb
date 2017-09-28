@@ -5,7 +5,7 @@
         <%= image_tag c.image_url, class: 'card-img-top' %>
         <div class="card-img-overlay">
         <h4 class="card-title"><%= c.title %> #<%=c.issue_number %></h4>
-        <%= link_to 'Details', comic_path, class: "btn btn-primary" %>
+        <%= link_to 'Details', comic_path(:id => current_user.id, :comicid => c.id), class: "btn btn-primary" %>
         </div>
     </div>
 <% end %>
