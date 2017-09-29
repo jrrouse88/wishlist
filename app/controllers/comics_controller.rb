@@ -5,7 +5,7 @@ class ComicsController < ApplicationController
   end
 
   def show
-    @comic = Comic.find(params[:comicid])
+    @comic = Comic.find(params[:id])
   end
 
   def new
@@ -22,9 +22,17 @@ class ComicsController < ApplicationController
   end
 
   def edit
+    @comic = Comic.find(params[:id])
   end
 
   def update
+    @comic = Comic.find(params[:id])
+    if @comic.update_attributes(comic_params)
+      redirect_to comic_path(params[:id])
+    else
+      flash[:danger] = 'Please double check all fields'
+      redirect_to edit_comic_path
+    end
   end
 
   def destroy
@@ -32,6 +40,6 @@ class ComicsController < ApplicationController
 
   private
   def comic_params
-    params.required(:comic).permit(:title, :issue_number, :price, :image_url)
+    params.required(:comic).permit(:title, :issue_number, :price, :image_url, :purchsed)
   end
 end
