@@ -22,6 +22,10 @@ Each comic can be edited after it has been added to your library. If you ever de
 - Rails
 - Bootstrap
 
+## Entity Relations
+
+![Relations Pic](grab.png)
+
 ## User Stories
 
 As a user, I want to be able to create an account to save my wishlist.
