@@ -21,7 +21,7 @@
               Added <%= time_ago_in_words @comic.created_at %> ago
             </div>
           </div>
-          <%= link_to 'Back', user_path(current_user), class: 'btn btn-secondary' %>
+          <%= link_to 'Back', user_path(@comic.user), class: 'btn btn-secondary' %>
           <%= link_to 'Edit Comic', edit_comic_path(params[:comicid]), class: 'btn btn-secondary' %>
     </div>
 </div>
