@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to users_path
+      redirect_to user_path(current_user)
     else
       flash[:danger] = "Please double check all fields"
       redirect_to new_user_path
