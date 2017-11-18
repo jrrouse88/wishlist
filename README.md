@@ -4,7 +4,7 @@
 
 A place for comic nerds to store their library.
 
-Visit the app [ComicColl](https://secret-chamber-72331.herokuapp.com/)
+Visit the app [ComicColl](https://comiccoll.herokuapp.com/)
 
 Take a look at my [Trello](https://trello.com/b/F6ydCQPL/project-2)
 
