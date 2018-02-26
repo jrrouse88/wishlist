@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    # assign comics to all instances of a comic
     @comics = Comic.all
+    # find a user by the parameter which should be an id
     @user = User.find(params[:id])
   end
 
